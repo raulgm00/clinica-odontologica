@@ -18,8 +18,6 @@ public class TurnoDao implements IDAO<Turno> {
     /*Inyecciond e dependencias con el constructor */
 
     private List<Turno> listaTurnos;
-//     private PacienteService ps = new PacienteService( new PacienteDaoH2());
-//     private OdontologoService os = new OdontologoService( new OdontologoDaoH2());
 
 
 
@@ -43,13 +41,14 @@ public class TurnoDao implements IDAO<Turno> {
 
     @Override
     public Turno buscarPorId(Integer id) {
-        for(Turno t : listaTurnos){
+
+        for(Turno t : this.listaTurnos){
             if(t.getId().equals((id))){
-                LOGGER.info("turno encontrado: " + t);
+                LOGGER.info("Turno encontrado por id : " + t);
                 return t;
             }
         }
-        LOGGER.info("turno no encontrado: " );
+        LOGGER.info("Turno no encontrado por id : " + id );
         return null;
     }
 
@@ -60,21 +59,24 @@ public class TurnoDao implements IDAO<Turno> {
 
     @Override
     public void actualizar(Turno turno) {
-        /*Solo actualziar la fecha, ya que es turno en memoria y este cuenta con solo un dato que actualziar */
-//        Integer idPaciente = turno.getPaciente().getId();
-//        Integer idOdontologo = turno.getOdontologo().getId();
+
+        Integer idPaciente = turno.getPaciente().getId();
+        Integer idOdontologo = turno.getOdontologo().getId();
+        Boolean bandera = false;
         for( Turno t : listaTurnos){
             if(t.getId().equals(turno.getId())){
-//                LOGGER.info("Paciente : "+  ps.buscarPacientesPorId(idPaciente));
-//                LOGGER.info("Turno : "+  os.buscarOdontologoPorId(idOdontologo) );
-//                t.setPaciente(  ps.buscarPacientesPorId(idPaciente) );
-//                t.setOdontologo( os.buscarOdontologoPorId(idOdontologo) );
+                t.setPaciente(  turno.getPaciente() );
+                t.setOdontologo( turno.getOdontologo() );
                 t.setFecha(turno.getFecha());
                 LOGGER.info("turno actualizado " + t);
+                bandera= true;
                 break;
             }
+
         }
-        LOGGER.info("turno no modificado " );
+        if(!bandera) {
+            LOGGER.info("turno no modificado " + turno.getId() );
+        }
 
     }
 

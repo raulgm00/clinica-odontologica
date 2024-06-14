@@ -90,7 +90,7 @@ public class OdontologoDaoH2 implements IDAO<Odontologo> {
             while (rs.next()){
                 odontologoRetornado = crearOdontologo(rs);
             }
-            LOGGER.info("Paciente encontrado : " + odontologoRetornado.toString());
+            LOGGER.info("Odontologo encontrado por id : " + odontologoRetornado );
 
 
         }catch (Exception e){

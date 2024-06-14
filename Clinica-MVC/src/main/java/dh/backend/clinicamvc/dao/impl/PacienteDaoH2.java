@@ -103,7 +103,7 @@ public class PacienteDaoH2 implements IDAO<Paciente> {
                 Domicilio domicilioEncontrado = domicilioDaoH2.buscarPorId(idDomicilio);
                 pacienteRetornado = new Paciente(idDevuleto,nombre,apellido,dni,fecha,domicilioEncontrado);
             }
-            LOGGER.info("Paciente encontrado : " + pacienteRetornado);
+            LOGGER.info("Paciente encontrado por id: " + pacienteRetornado);
 
 
         }catch (Exception e){
