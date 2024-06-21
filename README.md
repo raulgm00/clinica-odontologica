@@ -56,6 +56,12 @@ http://localhost:8080/h2-console/login.jsp
 
 
 
+
+https://github.com/raulgm00/clinica-odontologica/assets/58957933/be44c0ac-c97d-4213-815a-95ad21533659
+
+
+
+
 ## Licencia
 
 Este repositorio contiene código privado desarrollado por Backend I. El acceso y el uso de este código están restringidos a los empleados de Backend I para fines específicos dentro del ámbito de sus responsabilidades laborales.
