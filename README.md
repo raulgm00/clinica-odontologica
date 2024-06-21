@@ -33,6 +33,28 @@ El servidor para la Bakcend debería estar corriendo en
 http://localhost:8080/ + los paths definidos para la API en SpringBoot
 ```
 
+Para validar la capa de persistencia en la base de datos de H2, se debera colcoar la siguiente configuracion en :
+
+```bash
+#Configuracion h2 Persistente
+spring.h2.console.enabled=true
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.url=jdbc:h2:~/clinicatest11
+spring.datasource.username=sa
+spring.datasource.password=sa
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+```
+
+Para mirar los datos en la base de datos de H2, deberas entrar a la consola
+
+```bash
+http://localhost:8080/h2-console/login.jsp
+```
+
+![imagen](https://github.com/raulgm00/clinica-odontologica/assets/58957933/16a4458b-d80c-4afd-a2b9-88fd09972755)
+
+
 
 ## Licencia
 
