@@ -1,7 +1,7 @@
 package dh.backend.clinicamvc.dto.request;
 
-import dh.backend.clinicamvc.model.Odontologo;
-import dh.backend.clinicamvc.model.Paciente;
+import dh.backend.clinicamvc.entity.Odontologo;
+import dh.backend.clinicamvc.entity.Paciente;
 import lombok.*;
 
 import java.time.LocalDate;
